@@ -22,7 +22,7 @@ router.post("/signin", async (request, response) => {
   }
 });
 
-router.get('/', async (request, response) => {
+router.get('/get_user', async (request, response) => {
   try{
     const user = await User.find()
 
