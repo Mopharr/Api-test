@@ -5,9 +5,10 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 
-const cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
 
-require("dotenv").config();
+
+require("dotenv").config({path: './config/config.env'});
 const routes = require("./routes/routes.js");
 
 // setup body parser
@@ -38,7 +39,7 @@ app.use((req, res, next) => {
       autoIndex: false,
     };
     // connect you DB here
-    await mongoose.connect(process.env.DB_URL, options);
+    await mongoose.connect(process.env.MONGODB_URI, options);
     console.log("connected to DB");
   } catch (err) {
     console.log(err.toString());
