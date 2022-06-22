@@ -8,7 +8,7 @@ router.post("/signin", async (request, response) => {
   try {
     const { userName, password } = request.body;
 
-    if (userName === "tanzkid" && password === "tanzkid") {
+    if (userName === "admin" && password === "admin") {
       return response.send({ status: 200, data: { userName, password } });
     } else {
       return response.send({
